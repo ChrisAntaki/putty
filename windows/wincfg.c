@@ -52,7 +52,7 @@ void win_setup_config_box(struct controlbox *b, HWND *hwndp, int has_help,
 	 * Add the About and Help buttons to the standard panel.
 	 */
 	s = ctrl_getset(b, "", "", "");
-	c = ctrl_pushbutton(s, "About", 'a', HELPCTX(no_help),
+	c = ctrl_pushbutton(s, "About", NULL, HELPCTX(no_help),
 			    about_handler, P(hwndp));
 	c->generic.column = 0;
 	if (has_help) {

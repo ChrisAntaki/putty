@@ -1387,7 +1387,7 @@ void setup_config_box(struct controlbox *b, int midsession,
 		    "Load, save or delete a stored session");
     ctrl_columns(s, 2, 75, 25);
     get_sesslist(&ssd->sesslist, TRUE);
-    ssd->editbox = ctrl_editbox(s, "Saved Sessions", 'e', 100,
+    ssd->editbox = ctrl_editbox(s, "Session Name", 'e', 100,
 				HELPCTX(session_saved),
 				sessionsaver_handler, P(ssd), P(NULL));
     ssd->editbox->generic.column = 0;
@@ -1395,7 +1395,7 @@ void setup_config_box(struct controlbox *b, int midsession,
      * than alongside that edit box. */
     ctrl_columns(s, 1, 100);
     ctrl_columns(s, 2, 75, 25);
-    ssd->listbox = ctrl_listbox(s, NULL, NO_SHORTCUT,
+    ssd->listbox = ctrl_listbox(s, "Saved Sessions", 'a',
 				HELPCTX(session_saved),
 				sessionsaver_handler, P(ssd));
     ssd->listbox->generic.column = 0;
